@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Billing Address</h1>
+
+<p>
+  
+  <% if @billing_address.user_id.present? %>
+	<b>User ID:</b> <%= @billing_address.user_id %></br>
+  <% end %>
+
+  <b>Name:</b>
+  <%= @billing_address.billing_first_name.capitalize %> <%= @billing_address.billing_last_name.capitalize %></br>
+  <b>Address:</b></br>
+  <%= @billing_address.billing_street %></br>
+
+  <% if @billing_address.billing_street2.present? %>
+	<%= @billing_address.billing_street2 %></br>
+  <% end %>
+
+  <%= @billing_address.billing_city %>, <%= @billing_address.billing_state %> <%= @billing_address.billing_zipcode %></br></br>
+  <% if @billing_address.billing_ip_address.present? %>
+	<b>IP Address:</b><%= @billing_address.billing_ip_address %>
+  <% end %>
+</p>
+
+
+<%= link_to 'Edit', edit_billing_address_path(@billing_address) %> |
+<%= link_to 'Back', billing_addresses_path %>

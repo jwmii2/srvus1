@@ -1,0 +1,45 @@
+<%= form_for(@billing_address) do |f| %>
+  <% if @billing_address.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@billing_address.errors.count, "error") %> prohibited this Billing Address from being saved:</h2>
+
+      <ul>
+      <% @billing_address.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%#= f.label :billing_first_name %>First Name<br />
+    <%= f.text_field :billing_first_name %>
+  </div>
+ <div class="field">
+    <%#= f.label :billing_last_name %>Last Name<br />
+    <%= f.text_field :billing_last_name %>
+  </div>
+ <div class="field">
+    <%#= f.label :billing_street %>Street Address<br />
+    <%= f.text_field :billing_street %>
+  </div>
+ <div class="field">
+    <%#= f.label :billing_street2 %>Street Address 2<br />
+    <%= f.text_field :billing_street2 %>
+  </div>
+ <div class="field">
+    <%#= f.label :billing_city %>City<br />
+    <%= f.text_field :billing_city %>
+  </div>
+ <div class="field">
+    <%#= f.label :billing_state %>State<br />
+    <%= f.text_field :billing_state %>
+  </div>
+ <div class="field">
+    <%#= f.label :billing_zipcode %>Zip Code<br />
+    <%= f.text_field :billing_zipcode %>
+  </div></br>
+  <div class="actions">
+    <%= f.submit %>
+  </div></br>
+<% end %>
